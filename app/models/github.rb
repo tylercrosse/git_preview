@@ -29,7 +29,6 @@ class Github
         owner_html_url: response["owner"]["html_url"]
       )
     end
-    binding.pry
   end
 
 end
