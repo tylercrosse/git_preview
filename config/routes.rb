@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'repos#index'
+  root 'repos#show'
 
   resources :repos do
     resources :commits
