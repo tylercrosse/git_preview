@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   root 'repos#show'
 
-  resources :repos do
-    resources :commits
+  resources :users do
+    resources :repos do
+      resources :commits
+    end
   end
 
   get '/login' => 'sessions#new'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117220524) do
+ActiveRecord::Schema.define(version: 20151117232428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151117220524) do
     t.integer  "repo_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "sha"
   end
 
   add_index "commits", ["repo_id"], name: "index_commits_on_repo_id", using: :btree
