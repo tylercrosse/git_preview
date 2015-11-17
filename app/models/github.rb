@@ -16,17 +16,20 @@ class Github
 
   def get_repos
     response = HTTParty.get("https://api.github.com/user/repos", :headers => @headers)
-    Repo.create(
-      rid: response[0]["id"],
-      name: response[0]["name"],
-      full_name: response[0]["full_name"],
-      user_id: user.id,
-      html_url: response[0]["html_url"],
-      description: response[0]["description"],
-      owner: response[0]["owner"]["login"],
-      owner_avatar_url: response[0]["owner"]["avatar_url"],
-      owner_html_url: response[0]["owner"]["html_url"]
-    )
+    response .each do |response|
+      Repo.create(
+        rid: response["id"],
+        name: response["name"],
+        full_name: response["full_name"],
+        user_id: @user_id,
+        html_url: response["html_url"],
+        description: response["description"],
+        owner: response["owner"]["login"],
+        owner_avatar_url: response["owner"]["avatar_url"],
+        owner_html_url: response["owner"]["html_url"]
+      )
+    end
+    binding.pry
   end
 
 end
