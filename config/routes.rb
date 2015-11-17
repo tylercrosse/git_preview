@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'repos#index'
+
+  resources :repos do
+    resources :commits
+  end
+
+  get '/login' => 'sessions#new'
+  get '/auth/github/callback' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
