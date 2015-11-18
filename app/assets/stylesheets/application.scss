@@ -1,0 +1,182 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*// **************************
+ // * Reset
+ // ***************************/
+
+ /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+/*// **************************
+// * Global
+// ***************************/
+
+body {
+  box-sizing: border-box;
+  font-family: Helvetica, arial
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.avatar-20 {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+  border-radius: 3px;
+}
+
+/*// **************************
+// * Header
+// ***************************/
+
+.header {
+  height: 28px;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(229, 229, 229);
+  padding: 10px 0;
+}
+  .logo {
+    float: left;
+    clear: left;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline;
+    padding: 4px 8px;
+    line-height: 28px;
+    margin-left: 60px;
+    margin-right: 10px;
+  }
+
+  .nav-left {
+    float: left;
+  }
+
+  .nav-right {
+    float: right;
+    margin-right: 60px;
+  }
+
+    .nav-item {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 13px;
+      line-height: 20px;
+      border: 1px solid rgb(229, 229, 229);
+      border-radius: 3px;
+      color: rgb(51, 51, 51);
+      font-weight: bold;
+        &:hover { background-color: rgb(229, 229, 229); }
+    }
+
+
+      .nav-item a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+/*// **************************
+// * Body
+// ***************************/
+
+.container {
+  margin: 20px 10% 0 10%;
+}
+
+.pageTitle {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 0 12px 0;
+}
+
+.repoTable {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+}
+  th {
+    text-align: left;
+    padding: 6px 0;
+    font-weight: bold;
+  }
+
+  td {
+    border-top: 1px solid rgb(229, 229, 229);
+    border-bottom: 1px solid rgb(229, 229, 229);
+    padding: 8px 0;
+  }
+
+.commit {
+  height: 225px;
+  width: 300px;
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 3px;
+  padding: 8px;
+  margin: 8px 0 0 8px;
+  float: left;
+}

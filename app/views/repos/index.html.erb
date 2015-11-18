@@ -1,7 +1,21 @@
-<h1>Repo Index</h1>
-<% @repos.each do |repo| %>
-  <%= link_to 'Show Commits', user_repo_commits_path(@user_id, repo)%>
-  <h2><%= repo.name %></h2>
-  <p>by <%= repo.user.name %>, updated on <%= repo.updated_at.strftime("%x") %><%# repo.git_updated_at.strftime("%x") %></p>
-  <hr>
-<% end %>
+<div class="container">
+  <h1 class="pageTitle"><%= @user.nickname %> > Repos</h1>
+  <table class="repoTable">
+    <tr>
+      <th>Repo</th>
+      <th></th>
+      <th>User</th>
+      <th>Updated</th>
+      <th>Pushed</th>
+    </tr>
+    <% @repos.each do |repo| %>
+    <tr>
+      <td colspan="1"></td>
+      <td><%= link_to repo.name, user_repo_commits_path(@user.id, repo)%></td>
+      <td><%= repo.user.nickname %></td>
+      <td colspan="1"><%# repo.git_updated_at %></td>
+      <td colspan="1"><%# repo.git_pushed_at %></td>
+    </tr>
+    <% end %>
+  </table>
+</div><!-- /container -->

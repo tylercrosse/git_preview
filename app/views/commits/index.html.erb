@@ -1,12 +1,15 @@
-<h1><%= @repo_name %> Commits</h1>
-<%= link_to 'Back to Repos', user_repos_path(@repo) %>
+<div class="container">
+  <h1 class="pageTitle"><%= @user.nickname %>  >  <%= @repo_name %>  >  Commits</h1>
+  <%= link_to 'Back to Repos', user_repos_path(@user) %>
+</div><!-- /container -->
+
 <% @commits.reverse.each do |commit| %>
-  <h2><%= commit.commit_message %></h2>
-  <p>by <%= commit.committer_name %>, updated on <%= commit.committer_date %></p>
+<div class="commit clearfix">
   <% if commit.image %>
-    <%= image_tag(commit.image) %>
+  <%= image_tag(commit.image) %>
   <% else %>
-    <%= link_to 'Add image', edit_user_repo_commit_path(@user,@repo,commit) %>
+  <%= link_to 'Add image', edit_user_repo_commit_path(@user,@repo,commit) %>
   <% end %>
-  <hr>
+  <p>by <%= commit.committer_name %> <%= commit.committer_date %></p>
+</div>
 <% end %>
