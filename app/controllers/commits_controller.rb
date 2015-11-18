@@ -1,7 +1,7 @@
 class CommitsController < ApplicationController
   def index
+    @user = current_user
     @user_id = params[:user_id]
-    binding.pry
     @nickname = current_user.nickname
     @repo_id = params[:repo_id]
     @repo = Repo.find_by(id: @repo_id)
@@ -16,4 +16,22 @@ class CommitsController < ApplicationController
     @commits = @repo.commits.all
     # @commits = Commit.find_by(user_id: @user_id, repo_id: @repo_id)
   end
+
+  def edit
+    @user = current_user
+    @repo = Repo.find(params[:repo_id])
+    @commit = @repo.commits.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    @repo = Repo.find(params[:repo_id])
+    @commit = @repo.commits.find(params[:id])
+    @commit.update(commit_params)
+  end
+
+  private
+    def commit_params
+      params.require(:commit).permit(:image, :body)
+    end
 end

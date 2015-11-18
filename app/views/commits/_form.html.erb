@@ -1,0 +1,5 @@
+<%= form_for([@user, @repo, @commit]) do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>

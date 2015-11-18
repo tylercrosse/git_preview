@@ -1,6 +1,12 @@
 <h1><%= @repo_name %> Commits</h1>
 <%= link_to 'Back to Repos', user_repos_path(@repo) %>
-<% @commits.each do |commit| %>
+<% @commits.reverse.each do |commit| %>
   <h2><%= commit.commit_message %></h2>
   <p>by <%= commit.committer_name %>, updated on <%= commit.committer_date %></p>
+  <% if commit.image %>
+    <%= image_tag(commit.image) %>
+  <% else %>
+    <%= link_to 'Add image', edit_user_repo_commit_path(@user,@repo,commit) %>
+  <% end %>
+  <hr>
 <% end %>
