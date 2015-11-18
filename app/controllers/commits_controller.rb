@@ -17,6 +17,13 @@ class CommitsController < ApplicationController
     # @commits = Commit.find_by(user_id: @user_id, repo_id: @repo_id)
   end
 
+  # def create
+  #   @user = current_user
+  #   @repo = Repo.find(params[:repo_id])
+  #   @commit = @repo.commits.find(params[:id])
+  #   @commit.create(commit_params)
+  # end
+
   def edit
     @user = current_user
     @repo = Repo.find(params[:repo_id])
@@ -28,10 +35,12 @@ class CommitsController < ApplicationController
     @repo = Repo.find(params[:repo_id])
     @commit = @repo.commits.find(params[:id])
     @commit.update(commit_params)
+
+    redirect_to user_repo_commits_path(@user, @repo)
   end
 
   private
     def commit_params
-      params.require(:commit).permit(:image, :body)
+      params.require(:new_commit).permit(:image)
     end
 end

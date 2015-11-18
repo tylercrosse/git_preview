@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'repos#show'
+  root 'repos#index'
 
   resources :users do
     resources :repos do

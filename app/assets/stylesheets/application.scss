@@ -176,7 +176,29 @@ body {
   width: 300px;
   border: 1px solid rgb(229, 229, 229);
   border-radius: 3px;
-  padding: 8px;
   margin: 8px 0 0 8px;
   float: left;
+  font-size: 13px;
 }
+
+  .commitImage {
+    height: 200px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+    .commitImage img {
+      position:absolute;
+      display:block;
+      top:0;
+      left:0;
+      max-width: 100%;
+    }
+
+  .commit a,
+  .commit p {
+    display: inline;
+  }

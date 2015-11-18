@@ -4,4 +4,6 @@ class Commit < ActiveRecord::Base
 
   validates :sha, presence: true
   validates :sha, uniqueness: true, if: -> { self.sha.present? }
+
+  mount_uploader :image, ImageUploader
 end
