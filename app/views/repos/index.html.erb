@@ -1,5 +1,6 @@
 <h1>Repo Index</h1>
 <% @repos.each do |repo| %>
+  <%= link_to 'Show Commits', user_repo_commits_path(@user_id, repo)%>
   <h2><%= repo.name %></h2>
   <p>by <%= repo.user.name %>, updated on <%= repo.updated_at.strftime("%x") %></p>
 <% end %>

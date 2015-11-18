@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       session[:token] = @token
-      redirect_to root_url
-    binding.pry
+      redirect_to user_repos_path(@user.id)
     else
       redirect_to root_url
     end

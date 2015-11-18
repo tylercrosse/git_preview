@@ -42,12 +42,23 @@ class Github
         committer_name: response["commit"]["committer"]["name"],
         committer_date: response["commit"]["committer"]["date"],
         committer_avatar_url: response["committer"]["avatar_url"],
-        commit_message: response["commit_message"],
+        commit_message: response["commit"]["message"],
         url: response["url"],
         html_url: response["html_url"],
         user_id: @user_id,
         repo_id: @repo_id
       )
+      # Commit.update(
+      #   sha: response["sha"],
+      #   committer_name: response["commit"]["committer"]["name"],
+      #   committer_date: response["commit"]["committer"]["date"],
+      #   committer_avatar_url: response["committer"]["avatar_url"],
+      #   commit_message: response["commit"]["message"],
+      #   url: response["url"],
+      #   html_url: response["html_url"],
+      #   user_id: @user_id,
+      #   repo_id: @repo_id
+      # )
     end
   end
 

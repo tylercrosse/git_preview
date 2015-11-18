@@ -1,2 +1,6 @@
-<h1>Commit#index</h1>
-<p>Find me in app/views/commit/index.html.erb</p>
+<h1><%= @repo_name %> Commits</h1>
+<%= link_to 'Back to Repos', user_repos_path(@repo) %>
+<% @commits.each do |commit| %>
+  <h2><%= commit.commit_message %></h2>
+  <p>by <%= commit.committer_name %>, updated on <%= commit.committer_date %></p>
+<% end %>
