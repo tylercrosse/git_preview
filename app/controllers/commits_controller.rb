@@ -17,6 +17,12 @@ class CommitsController < ApplicationController
     # @commits = Commit.find_by(user_id: @user_id, repo_id: @repo_id)
   end
 
+  def show
+    @user = current_user
+    @repo = Repo.find(params[:repo_id])
+    @commit = @repo.commits.find(params[:id])
+  end
+
   # def create
   #   @user = current_user
   #   @repo = Repo.find(params[:repo_id])

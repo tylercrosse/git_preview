@@ -205,3 +205,28 @@ body {
   .commit p {
     display: inline;
   }
+
+.commit-show-nav {
+    height: 20px;
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    border-bottom: 1px solid rgb(238, 238, 238);
+    padding: 8px 0;
+}
+
+ .commit-show-nav-item {
+   display: inline-block;
+   padding: 4px 8px;
+   font-size: 13px;
+   line-height: 20px;
+   border: 1px solid rgb(229, 229, 229);
+   border-radius: 3px;
+   color: rgb(51, 51, 51);
+   font-weight: bold;
+     &:hover { background-color: rgb(229, 229, 229); }
+ }
+
+.commit-show-image {
+  max-width: 80%;
+  height: auto;
+}

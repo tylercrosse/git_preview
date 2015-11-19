@@ -1,1 +1,10 @@
-<h2>Commit Message: <%= commit.commit_message %></h2>
+<div class="commit-show-nav">
+  <div class="nav-left">
+    <%# (NEXT) if there is a parent commit go to that parent %>
+    <%# (PREVIOUS) if there is a parent/older commit go to that parent %>
+    <%= link_to  %>
+  </div>
+  <div class="nav-right"></div>
+</div>
+<%= link_to 'Change image', edit_user_repo_commit_path(@user,@repo,@commit) %>
+<img class="commit-show-image" src="<%= @commit.image %>" alt="Commit Image">

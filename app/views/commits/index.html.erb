@@ -4,11 +4,12 @@
 </div><!-- /container -->
 
 <% @commits.reverse.each do |commit| %>
-<div class="commit clearfix">
-  <div class="commitImage">
-    <img src="<%= commit.image %>" alt="Commit Image">
-  </div>
-  <%= link_to 'Change image', edit_user_repo_commit_path(@user,@repo,commit) %>
-  <p>by <%= commit.committer_name %> <%= commit.committer_date %></p>
-</div>
+  <%= link_to user_repo_commit_path(@user,@repo,commit), title: "" do %>
+    <div class="commit clearfix">
+      <div class="commitImage">
+        <img src="<%= commit.image %>" alt="Commit Image">
+      </div>
+      <p>by <%= commit.committer_name %> <%= commit.committer_date.to_time.strftime("at %r on %x") %></p>
+    </div>
+  <% end %>
 <% end %>
