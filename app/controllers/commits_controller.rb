@@ -23,7 +23,7 @@ class CommitsController < ApplicationController
     @commit = @repo.commits.find(params[:id])
     @commits = @repo.commits.all.order(committer_date: :desc)
     @previous_commit = @commits.where('commits.committer_date < ?', @commit.committer_date).first
-    @next_commit = @commits.where('commits.committer_date > ?', @commit.committer_date).first
+    @next_commit = @commits.where('commits.committer_date > ?', @commit.committer_date).last
   end
 
   # def create

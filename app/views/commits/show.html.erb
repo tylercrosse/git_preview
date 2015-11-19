@@ -1,15 +1,40 @@
-<div class="commit-show-nav">
-  <div class="nav-left">
-    <%# (NEXT) if there is a parent commit go to that parent %>
-    <%# (PREVIOUS) if there is a parent/older commit go to that parent %>
-    <% if @next_commit %>
-      <%= link_to  'Next Commit', user_repo_commit_path(@user, @repo, @next_commit)%>
+<div class="commit-show-nav top">
+  <div class="nav-container">
+    <%= link_to user_repo_commits_path(@user, @repo), title: '' do %>
+      <div class="commit-show-nav-item commit-button"> Commit Index</div>
     <% end %>
-    <% if @previous_commit %>
-      <%= link_to  'Previous Commit', user_repo_commit_path(@user, @repo, @previous_commit)%>
+    <div class="commit-info">
+      <img class="avatar-20" src="<%= @commit.committer_avatar_url %>" alt="Image of <%= @commit.committer_name %>">
+      <%= @commit.committer_name %> -
+      <%= @commit.committer_date.to_time.strftime("at %r on %x") %>
+    </div>
+    <%= link_to @commit.html_url, title: '', :target => "_blank" do %>
+      <div class="nav-right commit-show-nav-item">View on Github</div>
     <% end %>
-  </div>
-  <div class="nav-right"></div>
+    <p class="commit-message">" <%= @commit.commit_message %> "</p>
+  </div><!-- /container -->
 </div>
-<%= link_to 'Change image', edit_user_repo_commit_path(@user,@repo,@commit) %>
+
 <img class="commit-show-image" src="<%= @commit.image %>" alt="Commit Image">
+
+<div class="commit-show-nav bottom">
+  <div class="commit-nav-container">
+    <div class="nav-left">
+      <% if @next_commit %>
+        <%= link_to user_repo_commit_path(@user, @repo, @next_commit), title: '' do %>
+          <div class="commit-show-nav-item"> <- Next Commit</div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to edit_user_repo_commit_path(@user,@repo,@commit), title: '' do %>
+      <div class="commit-show-nav-item commit-button">Change Image</div>
+    <% end %>
+    <div class="nav-right">
+      <% if @previous_commit %>
+        <%= link_to user_repo_commit_path(@user, @repo, @previous_commit), title: '' do %>
+          <div class="commit-show-nav-item">Previous Commit -> </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div><!-- /container -->
+</div>

@@ -9,7 +9,8 @@
       <div class="commitImage">
         <img src="<%= commit.image %>" alt="Commit Image">
       </div>
-      <p>by <%= commit.committer_name %> <%= commit.committer_date.to_time.strftime("at %r on %x") %></p>
+      <img class="avatar-20" src="<%= commit.committer_avatar_url %>" alt="Image of <%= commit.committer_name %>">
+      <p><%= commit.committer_name %> <%= commit.committer_date.to_time.strftime("at %r on %x") %></p>
     </div>
   <% end %>
 <% end %>

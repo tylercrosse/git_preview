@@ -8,31 +8,33 @@
 </head>
 <body>
   <div class="header">
-    <div class="clearfix">
-      <h1 class="logo">Git Preview</h1>
-      <ul class="nav-left">
-        <% if logged_in? %>
-          <li class="nav-item">
-            <%= link_to "Repos", user_repos_path(current_user), class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-      <ul class="nav-right">
-        <% if logged_in? %>
-          <li class="nav-item">
-            <img class="avatar-20" src="<%= current_user.image %>" alt="Image of <%= current_user.name %>">
-            <%= link_to current_user.name, root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Log Out', logout_path, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to 'Log In with Github', login_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <div class="nav-container">
+      <div class="clearfix">
+        <h1 class="logo">Git Preview</h1>
+        <ul class="nav-left">
+          <% if logged_in? %>
+            <li class="nav-item">
+              <%= link_to "Repos", user_repos_path(current_user), class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="nav-right">
+          <% if logged_in? %>
+            <li class="nav-item">
+              <img class="avatar-20" src="<%= current_user.image %>" alt="Image of <%= current_user.name %>">
+              <%= link_to current_user.name, root_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Log Out', logout_path, class: "nav-link" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to 'Log In with Github', login_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div><!-- /container -->
   </div>
 
 
