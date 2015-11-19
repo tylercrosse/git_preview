@@ -2,7 +2,12 @@
   <div class="nav-left">
     <%# (NEXT) if there is a parent commit go to that parent %>
     <%# (PREVIOUS) if there is a parent/older commit go to that parent %>
-    <%= link_to  %>
+    <% if @next_commit %>
+      <%= link_to  'Next Commit', user_repo_commit_path(@user, @repo, @next_commit)%>
+    <% end %>
+    <% if @previous_commit %>
+      <%= link_to  'Previous Commit', user_repo_commit_path(@user, @repo, @previous_commit)%>
+    <% end %>
   </div>
   <div class="nav-right"></div>
 </div>

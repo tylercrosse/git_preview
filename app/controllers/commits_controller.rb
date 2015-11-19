@@ -21,6 +21,9 @@ class CommitsController < ApplicationController
     @user = current_user
     @repo = Repo.find(params[:repo_id])
     @commit = @repo.commits.find(params[:id])
+    @commits = @repo.commits.all.order(committer_date: :desc)
+    @previous_commit = @commits.where('commits.committer_date < ?', @commit.committer_date).first
+    @next_commit = @commits.where('commits.committer_date > ?', @commit.committer_date).first
   end
 
   # def create
