@@ -1,5 +1,5 @@
 class Github
-  include HTTParty
+  include HTTParty # Don't recognize this syntax
   base_uri 'https://api.github.com'
   attr_reader :user_id, :nickname, :token, :repo_id, :repo_name
 
