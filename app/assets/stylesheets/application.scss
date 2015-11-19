@@ -179,6 +179,8 @@ body {
   margin: 8px 0 0 8px;
   float: left;
   font-size: 13px;
+  line-height: 25px;
+  text-align: center;
 }
 
   .commitImage {
@@ -188,6 +190,7 @@ body {
     overflow: hidden;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    border-bottom: 1px solid rgb(229, 229, 229);
   }
 
     .commitImage img {
