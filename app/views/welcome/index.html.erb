@@ -1,2 +1,13 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="welcome-container">
+  <div class="welcome-box">
+    <h1 class="welcome-subtitle">Welcome to</h1>
+    <h1 class="welcome-title">Git Preview</h1>
+    <div class="welcome-login-git">
+      <% if logged_in? %>
+        <%= link_to 'Log Out of App', logout_path, class: "nav-link" %>
+      <% else %>
+        <%= link_to 'Log In with Github', login_path, class: "nav-link" %>
+      <% end %>
+    </div>
+  </div>
+</div>
