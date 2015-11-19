@@ -13,7 +13,7 @@ class CommitsController < ApplicationController
                   repo_id: @repo_id,
                   repo_name: @repo_name}
     Github.new(github_info).get_commits
-    @commits = @repo.commits.all
+    @commits = @repo.commits.all.order(committer_date: :desc)
     # @commits = Commit.find_by(user_id: @user_id, repo_id: @repo_id)
   end
 

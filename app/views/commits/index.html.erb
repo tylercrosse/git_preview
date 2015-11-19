@@ -3,7 +3,7 @@
   <%= link_to 'Back to Repos', user_repos_path(@user) %>
 </div><!-- /container -->
 
-<% @commits.reverse.each do |commit| %>
+<% @commits.each do |commit| %>
   <%= link_to user_repo_commit_path(@user,@repo,commit), title: "" do %>
     <div class="commit clearfix">
       <div class="commitImage">
