@@ -4,17 +4,17 @@
     <tr>
       <th>Repo</th>
       <th></th>
-      <th>User</th>
+      <th>Owner</th>
       <th>Updated</th>
       <th>Pushed</th>
     </tr>
-    <% @repos.reverse.each do |repo| %>
+    <% @repos.each do |repo| %>
     <tr>
       <td colspan="1"></td>
       <td><%= link_to repo.name, user_repo_commits_path(@user.id, repo)%></td>
-      <td><%= repo.user.nickname %></td>
-      <td colspan="1"><%# repo.git_updated_at %></td>
-      <td colspan="1"><%# repo.git_pushed_at %></td>
+      <td><img class="avatar-20" src="<%= repo.owner_avatar_url %>" alt="Image of <%= repo.name %>"><%= repo.owner %></td>
+      <td><%= time_ago_in_words(repo.git_updated_at) %> ago</td>
+      <td><%= time_ago_in_words(repo.git_pushed_at) %> ago</td>
     </tr>
     <% end %>
   </table>

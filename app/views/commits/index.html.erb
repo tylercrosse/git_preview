@@ -6,11 +6,11 @@
 <% @commits.each do |commit| %>
   <%= link_to user_repo_commit_path(@user,@repo,commit), title: "" do %>
     <div class="commit clearfix">
-      <div class="commitImage">
-        <img src="<%= commit.image %>" alt="Commit Image">
+      <div class="commit-screenshot">
+        <img src="<%= commit.screenshot %>" alt="Commit screenshot">
       </div>
       <img class="avatar-20" src="<%= commit.committer_avatar_url %>" alt="Image of <%= commit.committer_name %>">
-      <p><%= commit.committer_name %> <%= commit.committer_date.to_time.strftime("at %r on %x") %></p>
+      <p><%= commit.committer_name %> - <%= time_ago_in_words(commit.committer_date) %> ago</p>
     </div>
   <% end %>
 <% end %>

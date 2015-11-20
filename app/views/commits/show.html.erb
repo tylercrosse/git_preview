@@ -6,7 +6,7 @@
     <div class="commit-info">
       <img class="avatar-20" src="<%= @commit.committer_avatar_url %>" alt="Image of <%= @commit.committer_name %>">
       <%= @commit.committer_name %> -
-      <%= @commit.committer_date.to_time.strftime("at %r on %x") %>
+      <%= time_ago_in_words(@commit.committer_date) %> ago
     </div>
     <%= link_to @commit.html_url, title: '', :target => "_blank" do %>
       <div class="nav-right commit-show-nav-item">View on Github</div>
@@ -15,7 +15,7 @@
   </div><!-- /container -->
 </div>
 
-<img class="commit-show-image" src="<%= @commit.image %>" alt="Commit Image">
+<img class="commit-show-image" src="<%= @commit.screenshot %>" alt="Commit Image">
 
 <div class="commit-show-nav bottom">
   <div class="commit-nav-container">

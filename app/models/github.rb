@@ -29,7 +29,10 @@ class Github
         description: response["description"],
         owner: response["owner"]["login"],
         owner_avatar_url: response["owner"]["avatar_url"],
-        owner_html_url: response["owner"]["html_url"]
+        owner_html_url: response["owner"]["html_url"],
+        git_created_at: response["created_at"],
+        git_updated_at: response["updated_at"],
+        git_pushed_at: response["pushed_at"]
       )
     end
   end

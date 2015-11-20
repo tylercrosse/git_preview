@@ -50,6 +50,6 @@ class CommitsController < ApplicationController
 
   private
     def commit_params
-      params.require(:new_commit).permit(:image)
+      params.require(:new_commit).permit(:screenshot)
     end
 end
