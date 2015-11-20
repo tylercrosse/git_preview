@@ -10,7 +10,9 @@
   <div class="header">
     <div class="nav-container">
       <div class="clearfix">
-        <h1 class="logo">Git Preview</h1>
+        <%= link_to root_path, title: '' do %>
+          <h1 class="logo">Git Preview</h1>
+        <% end %>
         <ul class="nav-left">
           <% if logged_in? %>
             <li class="nav-item">

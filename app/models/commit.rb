@@ -6,5 +6,16 @@ class Commit < ActiveRecord::Base
   validates :sha, uniqueness: true, if: -> { self.sha.present? }
 
   mount_uploader :screenshot, ImageUploader
-  
+
+  # after_create :add_screenshot
+  #
+  # def add_screenshot
+  #   @screenshot = "https://goo.gl/a63WHE"
+  #   puts '*' * 50
+  #   puts @screenshot
+  #   puts self
+  #   puts self.screenshot
+  #   self.update(self, screenshot: @screenshot)
+  #   puts self.screenshot
+  # end
 end
