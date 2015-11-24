@@ -18,7 +18,7 @@
 
 **Meets Expectations**. Good looking code! Only thing I'd suggest here is to think about how you can make your longer views (e.g., `/commits/show.html.erb`) more readable. Creating a partial or two here could be helpful. Also make sure to take a look at my inline code comments via the link below!
 
-[Inline code comments.]()
+[Inline code comments.](https://github.com/tylercrosse/git_preview/pull/2/files)
 
 ## Problem Solving
 
