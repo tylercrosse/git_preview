@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20151120013458) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  # AM: +1 for creating models out of an API response.
   create_table "commits", force: :cascade do |t|
     t.string   "committer_name"
     t.string   "committer_date"

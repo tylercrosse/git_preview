@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/login' => 'sessions#new'
+  # AM: +1 OAuth
   get '/auth/github/callback' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.

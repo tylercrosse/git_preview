@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by(id: session[:user_id])
     end
 
+    # AM: I've never used `!!`, but now that I know what it means I will whenever I can!
     def logged_in?
       !!current_user
     end

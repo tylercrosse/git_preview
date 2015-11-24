@@ -6,6 +6,7 @@ class CommitsController < ApplicationController
     @repo_id = params[:repo_id]
     @repo = Repo.find_by(id: @repo_id)
     @repo_name = @repo.name
+    # AM: Perhaps you could create a method in your model that generates this object for you based on inputs. Could save you some room here.
     #store info in variable to pass to app/models/github.rb
     github_info = {user_id: session[:user_id],
                   nickname: @nickname,
