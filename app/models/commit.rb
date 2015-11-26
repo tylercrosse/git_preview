@@ -7,17 +7,4 @@ class Commit < ActiveRecord::Base
 
   mount_uploader :screenshot, ImageUploader
 
-  # after_create :add_screenshot
-  #
-  # def add_screenshot
-  #   binding.pry
-  #   @screenshot = "https://goo.gl/a63WHE"
-  #   puts '*' * 50
-  #   puts @screenshot
-  #   puts self
-  #   puts self.screenshot
-  #   self.update(self, screenshot: @screenshot)
-  #   puts self.screenshot
-  #   binding.pry
-  # end
 end
