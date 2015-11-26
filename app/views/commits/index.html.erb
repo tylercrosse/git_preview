@@ -7,7 +7,7 @@
   <%= link_to user_repo_commit_path(@user,@repo,commit), title: "" do %>
     <div class="commit clearfix">
       <div class="commit-screenshot">
-        <img src="<%= commit.screenshot %>" alt="Commit screenshot">
+        <img class="scale" src="<%= commit.screenshot %>" alt="Commit screenshot">
       </div>
       <img class="avatar-20" src="<%= commit.committer_avatar_url %>" alt="Image of <%= commit.committer_name %>">
       <p><%= commit.committer_name %> - <%= time_ago_in_words(commit.committer_date) %> ago</p>

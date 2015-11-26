@@ -10,6 +10,7 @@ class Commit < ActiveRecord::Base
   # after_create :add_screenshot
   #
   # def add_screenshot
+  #   binding.pry
   #   @screenshot = "https://goo.gl/a63WHE"
   #   puts '*' * 50
   #   puts @screenshot
@@ -17,5 +18,6 @@ class Commit < ActiveRecord::Base
   #   puts self.screenshot
   #   self.update(self, screenshot: @screenshot)
   #   puts self.screenshot
+  #   binding.pry
   # end
 end
