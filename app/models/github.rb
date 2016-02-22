@@ -1,3 +1,4 @@
+# AM: I know we're going to meet about API class wrappers, but looks like you've already gotten the hang of it!
 class Github
   include HTTParty
   base_uri 'https://api.github.com'
@@ -51,6 +52,7 @@ class Github
         user_id: @user_id,
         repo_id: @repo_id
       )
+      # AM: Reminder to remove commented-out code from your submitted master branch. Should remove or include in a separate branch!
       # Commit.update(
       #   sha: response["sha"],
       #   committer_name: response["commit"]["committer"]["name"],
